@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>slide</title>
+
+  <style>
+    #slide{
+      position: relative;
+      width: 739px;
+      height: 419px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    /* 16:00~16:15 */
+    .item{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      /* 不透明度0(透明)~1(不透明) */
+      opacity: 0;
+    }
+    .active{
+      opacity: 1;
+      z-index: 5;
+    }
+  </style>
+
+</head>
+
+<body>
+  <ul id="slide">
+    <li class="item active">
+      <img src="../imgs/gm1-6.jpg" alt="">
+    </li>
+    <li class="item">
+      <img src="../imgs/gm2-6.jpg" alt="">
+    </li>
+    <li class="item">
+      <img src="../imgs/gm3-6.jpg" alt="">
+    </li>
+    <li class="item">
+      <img src="../imgs/gm4-6.jpg" alt="">
+    </li>
+    <li class="item">
+      <img src="../imgs/gm5-6.jpg" alt="">
+    </li>
+  </ul>
+
+  <script>
+  // 设置周期性定时器
+  // 每隔１．５ｓ自动　切换下一张图片
+  var items = document.getElementsByClassName('item');
+  var i =0;
+  function next(){
+    //切换下一张图片   
+    // 找到当前显示的li,去掉 class active
+    items[i].className= 'item';
+    // 找到下一个ｌｉ，添加class active
+    i++;
+    if(i==5) i=0;
+    items[i].className = 'item active';
+  }
+  var timerId = setInterval(next,1500);
+  // 当鼠标移入的时候　onmouseover 停止定时器
+  // 当鼠标移出的时候　onmouseout 启动定时器
+  var slide = document.getElementById('slide');
+  slide.onmouseover=function(){
+    clearInterval(timerId)
+  }
+  slide.onmouseout = function(){
+    timerId = setInterval(next,1500); 
+  }
+  </script>
+</body>
+
+</html>

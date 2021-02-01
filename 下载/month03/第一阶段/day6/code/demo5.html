@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>检测手机号码</title>
+</head>
+<body>
+
+<input type="text" name="" id="tel" placeholder="请输入手机号">
+<span id='tip'>xxx</span>
+  
+<script>
+  var tel = document.getElementById('tel')
+  var show = document.getElementById('tip')
+
+// oninput 正在输入时触发的事件
+// onfocus　获取焦点（鼠标点到文本框上）
+// onblur 失去焦点（鼠标点到文本框外）
+// onchagne　值发生改变时触发的事件
+  tel.onchange = function(){
+    var reg = /^1[3-9]\d{9}$/;
+    if(reg.test(tel.value)) show.innerHTML='OK';
+    else show.innerHTML='Error';
+  }
+
+  
+  
+</script>
+
+
+</body>
+</html>

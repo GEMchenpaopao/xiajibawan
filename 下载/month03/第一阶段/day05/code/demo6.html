@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>作用域</title>
+</head>
+<body>
+  <script>
+  function fun(x){
+    return function(y){
+      console.log(x+y)
+    }
+    
+  }
+  var inner = fun(10);
+  inner(20)
+  inner(5)
+  inner(15)
+  var add20 = fun(20);
+  add20(20)
+  add20(5)
+  </script>
+</body>
+</html>

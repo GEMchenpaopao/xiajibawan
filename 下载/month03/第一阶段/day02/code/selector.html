@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>选择器</title>
+<style>
+  /* #className{
+    color: aquamarine
+  }
+  /* 类选择器，查找页面中带有相同class属性值的元素 */
+  .black{
+    color: black
+  }
+  .center{
+    text-align: center
+  }
+  .red{
+    color: fuchsia
+  }
+   */
+   h1,p,ul,li{
+     /* 初始化页面样式 */
+     margin: 0;
+     padding: 0;
+   }
+   /* 后代选择器 */
+   body li{
+     color:gold
+   }
+   /* 子代选择器 */
+   ul>li{
+     background-color: blue
+   }
+   /* 后代选择器包含子代选择器 */
+</style>
+
+</head>
+<body>
+  <h1 class="red center"></h1>
+  <h1 id="title" class="red center"></h1>
+  <h1 id="className">这是一级标签</h1>
+  <h1 class="red center">我们不一样</h1>
+  <p class = "black">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore ad dolore, quia saepe quisquam consequatur voluptatum nisi doloribus eos. Magni aperiam, veniam corrupti eum incidunt ad neque sed ipsum adipisci.
+
+  </p>
+  <ul>
+    <li>item1</li>
+    <li>item2</li>
+    <li>item3</li>
+  </ul>
+  
+  
+</body>
+</html>

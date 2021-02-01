@@ -1,0 +1,2 @@
+chmod +x navicat15-mysql-cs.AppImage
+./navicat15-mysql-cs.AppImage

@@ -1,0 +1,28 @@
+/* 对index.css样式的调整和补充 */
+/* 每一张轮播图都定位到fader左上角 */
+.fader{
+  padding-top: 60%;
+}
+.fader .slide{
+  height: 100%;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: 0.5s;
+}
+.prev,.next,.pager_list{
+  z-index: 4;
+}
+.toppic li:last-child{
+  margin-top: 15px;
+}
+.pager_list li{
+  margin: 0 5px;
+  /* 利用文本缩进 */
+  text-indent: -9999px;
+}
+.prev:hover , .next:hover{
+  cursor: pointer;
+}

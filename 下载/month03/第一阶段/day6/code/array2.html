@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数组的常用方法</title>
+</head>
+<body>
+  
+  <script>
+  // var arr = [1,2,3,4];
+  // arr.push(5);
+  //   arr.push(6,7,[8,9]);
+  //   console.log(arr);
+  //   arr.pop();
+  //   console.log(arr);
+  // arr.splice(1,2) //从指定下标为１的位置删除２个元素
+  // console.log(arr)
+
+  // // 从索引值１的位置开始，删除两个元素，将３，４放到原本的位置上
+  // var res = arr.splice(1,2,3,4);
+  // console.log(arr)
+
+  //  var res = arr.toString()
+  // console.log(arr,res)
+
+  // var dateArr = [2020,12,30]
+  // var res = dateArr.join('-')
+  // console.log(res,dateArr)
+
+  // arr.reverse();
+  // console.log(arr)
+
+    var arr = [32,5,111,76,40];
+    arr.sort(function(a,b){
+      // a=111,b=76
+      // 如果返回值>０就交换ａｂ的位置
+      return a-b;
+
+    });
+    console.log(arr);
+
+   </script>
+
+</body>
+</html>

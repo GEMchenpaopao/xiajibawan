@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="img">
+    <img src="imgs/gm1-6.jpg" alt="">
+
+  </div>
+  <button id="btn1">隐藏</button>
+  <button id="btn2">上推</button>
+  <button id="btn3">淡隐</button>
+  <script src="../jquery.min.js"></script>
+
+  <script>
+    $('#btn2').click(function(){
+      if($('#btn2').html()=='上推'){
+        $('#img').slideUp();
+        $('#btn2').html('下拉')
+      }
+      else{
+        $('#img').slideDown();
+        $('#btn2').html('上推')
+      }
+    })
+    $('#btn3').click(function(){
+      if($('#btn3').html()=='淡隐'){
+        $('#img').fadeOut();
+        $('#btn3').html('淡现')
+      }
+      else{
+        $('#img').fadeIn();
+        $('#btn3').html('淡隐')
+      }
+    })
+    
+
+
+
+
+
+
+
+    // 判断按钮上面的文字
+    // 点击隐藏按钮 隐藏图片 将按钮的文字变成显示
+    // 点击显示按钮 显示图片 将按钮的文字变成隐藏
+    
+
+    $('#btn1').click(function(){
+      if($('#btn1').html()=='隐藏'){
+      $('#img').hide(1500,function(){
+      $('#btn1').html('显示');})
+      }
+      else
+      {
+        $('#img').show(1500,function(){
+        $('#btn1').html('隐藏');})
+      }
+    })
+  </script>
+</body>
+</html>

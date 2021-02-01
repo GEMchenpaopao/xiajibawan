@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  div{
+    position: fixed;
+    right: -123px;
+    top: 50%;
+    margin-top: -150px;
+    width: 122px;
+    transition: right 1.5s;
+    /* 隐藏
+    display: none;  */
+  }
+</style>
+
+<body>
+  <div  id="parent">
+    <img src="../imgs/img02-5.png" alt="">
+    <img id="close" src="../imgs/img01-5.png" alt="">
+  </div>
+
+  <script>
+    var parent = document.getElementById('parent')
+    var close = document.getElementById('close')
+    close.onclick = function(){
+      parent.style = 'right:-123px';
+      setTimeout(function(){
+      parent.style = 'right:0;';
+    },3000)
+    }
+
+    setTimeout(function(){
+      parent.style = 'right:0;';
+    },3000)
+  </script>
+</body>
+</html>

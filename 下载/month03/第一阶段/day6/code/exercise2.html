@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  ul{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+li{
+  float: left;
+}
+</style>
+
+<body>
+  
+<ul>
+  <li><img src="../imgs/bk0-8.jpg" alt=""></li>
+  <li><img src="../imgs/bk1-8.jpg" alt=""></li>
+  <li><img src="../imgs/bk2-8.jpg" alt=""></li>
+  <li><img src="../imgs/bk3-8.jpg" alt=""></li>
+</ul>
+
+<script>
+
+  var imgs= document.getElementsByTagName('img');
+// 随机生成图片路径
+var arr = [];//保存随机数
+
+// 生成一个０－９之间的随机数　ｎｕｍ
+while(arr.length<4)
+{
+  var num = parseInt(Math.random()*10);
+  if(arr.indexOf(num)==-1){
+    arr.push(num)
+  }
+}
+
+// `../imgs/bk${num}-8.jpg`
+for(var j=0;j<imgs.length;j++)
+{
+  imgs[j].src=`../imgs/bk${arr[j]}-8.jpg`
+}
+
+// 替换页面中元素的ｓｒｃ
+// imgs[0].src = 'xxx'
+</script>
+
+</body>
+</html>

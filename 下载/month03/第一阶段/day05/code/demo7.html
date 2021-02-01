@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>dom操作</title>
+</head>
+<body>
+  <ul>
+    <li class="item">彭于晏</li>
+    <li class="item">
+      我的自我感觉不差，体重没有减轻，对未来充满希望
+    </li >
+    <li class="item">
+      天气好极了
+    </li>
+    <li class="item">
+      钱机会没有
+    </li>
+  </ul>
+  <script>
+    // //通过标签名找元素
+    // var lis = document.getElementsByTagName('li');
+
+    var lis = document.getElementsByClassName('item');
+    console.log(lis); //页面元素集合
+    // 获取单独的页面元素
+    for(var i=0;i<4;i++){
+      console.log(lis[i].innerText);
+    }
+  </script>
+  
+</body>
+</html>

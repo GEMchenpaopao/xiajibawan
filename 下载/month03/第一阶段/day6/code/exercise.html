@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+<input id="key" placeholder="请输入邮箱" type="text" >
+<button id="btn">解析</button>
+<h1 id="show">xxx</h1>
+
+<script>
+//根据用户输入的邮箱解析出用户名和服务器
+//shibw@tedu.cn
+//用户名shibw,服务器tedu.cn
+
+
+
+var btn = document.getElementById('btn');
+var key = document.getElementById('key');
+var show = document.getElementById("show");
+
+btn.onclick=function(){
+  var str = key.value;
+var index = str.indexOf('@');
+var u = str.substring(0,index);
+var f = str.substring(index+1);
+show.innerHTML = `用户名${u},服务商${f}`;
+}
+</script>
+
+</body>
+</html>

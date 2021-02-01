@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>分离事件绑定</title>
+</head>
+<body>
+  <button id="btn" onclick="">click me</button>
+  <script>
+    //申明提前　通过关键字申明的变量或函数会提前到当前作用域的最上方
+    //如果是变量提前　只提前变量名，内容留在原本位置
+    // 如果是函数名提前　会携带函数体代码一同提前
+    // console.log(fun);//func
+    // console.log(fun1);//undefined
+    //查找　页面元素
+    //dom对象
+  var btn = document.getElementById('btn')
+  console.log(btn)
+  console.log(btn.id)
+  // 绑定事件
+    btn.onclick = function(){
+      alert('nihao');
+    }
+    // function fun(){
+    //   alert('hello world')
+    // }
+
+    // var fun1 = function(){
+    //   alert('nihao');
+    // }
+
+    
+
+  </script>
+</body>
+</html>

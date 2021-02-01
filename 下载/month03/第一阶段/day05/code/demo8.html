@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input  id="text" type="text" value="">
+  <button id="btn">显示</button>
+  <h1 id="show">xxx</h1>
+
+  <script>
+    //１．查找元素
+    var btn = document.getElementById('btn');
+    var text = document.getElementById('text');
+    var show = document.getElementById('show');
+    //2.写功能
+    //当按钮被点击时
+    btn.onclick = function(){
+      // console.log(text.value);
+      show.innerText=text.value;
+    }
+  </script>
+
+
+
+</body>
+</html>

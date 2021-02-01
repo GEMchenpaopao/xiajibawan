@@ -1,0 +1,45 @@
+一.用户模块
+  1.创建并注册USER应用
+    PYTHON3 MANAGE.PY STARTAPP USER
+  2.在MODELS.PY中增加模型类USERPROFILE类,[随机生成]
+  3.生成表结构
+    PYTHON3 MANAGE.PY MAKEMIGRATIONS
+    PYTHON3 MANAGE.PY MIGRATE
+  4.USER应用中的URL设计,[符合RESTFUL]
+    URL:HTTP://127.0.0.1:8000/V1/USERS
+  5.用户注册
+    POST HTTP://127.0.0.1:8000/V1/USERS 前后端交互JSON格式的数据
+    自定义异常码: 10100~10199
+    5.1.前端register.html页面分析,以及AJAX请求
+    5.2.后端的URL以及视图函数 [视图函数的返回一定是JSONRESPONSE,前后分离后,不会再调用RENDER返回模块页面了]
+	5.2.1 FBV-function based view -视图函数
+	  url<=>视图函数
+
+        def user_method(request):
+	if request.method == 'GET':
+	    #处理get请求
+	elif request.method == 'POST':
+		#处理post请求
+	elif request.method == 'PUT':
+		#处理put请求
+	elif request.method == 'DELETE':
+		#处理delete请求
+	
+	5.2.2 CBV-class based view -视图类
+          url   <=>   视图类
+          /v1/user 
+          GET.POST.PUT.DELETE   class UserView(View):
+	class UserView(View):
+	  def get(self,request):
+		#处理get请求
+	   def post(self,request):
+		#处理post请求
+	   def put(self,request):
+		#处理put请求
+	   def delete(self,request):
+		#处理delete请求
+	选择FBV还是CBV一般原则:
+	同一个url有一个或两个请求方式,选择FBV.
+	同一个url有两个或两个以上请求方式,选择CBV.
+	如果是两个请求,当处理请求的逻辑复杂选择CBV;否则,选择FBV
+    

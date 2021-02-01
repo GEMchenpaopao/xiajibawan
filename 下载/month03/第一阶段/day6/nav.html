@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    ul{
+      margin: 0;
+      padding: 0;
+      /* 去掉列表默认样式 */
+      list-style: none;
+    }
+    li{
+      display: inline-block;
+    }
+
+    .first{
+      color: #888;
+    }
+    /* 14:55~15:10 */
+    .item{
+      /* margin-left:20px;  */
+      margin: 0 10px;
+      padding: 0 3px;
+    }
+    .active  , .item:hover{
+      background-color: red;
+      color: #fff;
+      border-radius: 2px;
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li class="first">难度：</li>
+    <li class="item">全部</li>
+    <li class="item">初级</li>
+    <li class="item active">中级</li>
+    <li class="item">高级</li>
+  </ul>
+
+  <button id="btn">
+    demo
+  </button>
+
+<script>
+//   // 找到全部　初级　中级　高级　按钮
+   var items = document.getElementsByClassName('item');
+//   // 添加点击样式
+//   for(var i=0;i<items.length;i++){
+//     items[i].onclick = func(i);  
+//   }
+//  //外部函数只是提供　程序运行的环境你真正执行功能的是内部的匿名函数
+//   function func(i){
+//     return function(){
+//       alert(items[i].innerHTML);
+//     }
+//   }
+  
+
+  for(var i=0;i<items.length;i++)
+  {
+    items[i].onclick = function(){
+      //this表示当前对象
+
+      //找到所有的ｉｔｅｍ　清除ｃｌａｓｓａｃｔｉｖｅ
+
+      for(var j=0;j<items.length;j++)
+      {
+        items[j].className = 'item';
+      }
+      //为了避免和关键字ｃｌａｓｓ冲突　元素的ｃｌａｓｓ属性名叫做classname
+      
+      this.className = 'item active'
+    }
+  }
+</script>
+
+  <script>
+    var x = prompt("请输入第一个值：")
+    var y = prompt("请输入第二个值")
+  var btn=document.getElementById('btn')
+  btn.onclick = function(){
+      myadd(Number(x),Number(y));
+  }
+  function myadd(a,b){
+    alert(a+b);
+  }
+  </script>
+
+</body>
+</html>

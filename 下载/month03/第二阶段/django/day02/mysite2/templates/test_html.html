@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板页测试</title>
+</head>
+<body>
+<h1>模板页测试</h1>
+<p>班级名称:{{ name | truncatechars:'5' }}</p>
+<p>班级人数:{{ count }}</p>
+<p>直辖市:{{ citys }} | {{ citys.1}}</p>
+<p>人数分配:{{ distribute }} | {{ distribute.重庆 }}</p>
+<p>代言人:{{p1.showData}}</p>
+<p>致词: {{function1}}</p>
+<p>一段JavaScript脚本:{{script | safe}}</p>
+
+
+<h3>模板标签的使用</h3>
+{% if count > 125 %}
+    <p> 我们是一个大班 </p>
+{% else %}
+    <p> 我们都是精英 </p>
+{% endif %}
+
+<h3>刘备手下五虎上将</h3>
+{% for person in persons %}
+    <p> {{ forloop.counter }}.{{ person }} </p>
+{% empty %}
+<p>{{ empty }}</p>
+    <p>是非成败转头空</p>
+{% endfor %}
+</body>
+</html>

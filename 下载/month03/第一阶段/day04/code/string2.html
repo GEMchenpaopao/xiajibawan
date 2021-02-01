@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>转换成数值类型</title>
+</head>
+<body>
+  
+  <script>
+    Number('123abc') //NaN
+    typeof NaN //number
+
+    //isNaN()判断一个值是否为NaN,如果是则返回true.也就是说这个值没有办法转换成数值
+    Number('') //0
+    Number(true) //1
+    Number(false) //0
+    Number(undefined) //NaN
+    Number(null) //0
+    </script>
+
+</body>
+</html>

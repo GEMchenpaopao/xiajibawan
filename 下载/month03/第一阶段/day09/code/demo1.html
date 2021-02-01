@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>二级联动的下拉菜单</title>
+</head>
+<body>
+  
+<select name="" id="city">
+  <option value="0">请选择</option>
+</select>
+<select name="" id="area">
+  <option value="0">请选择</option>
+</select>
+<script src="../jquery.min.js"></script>
+<script>
+// 页面向服务器请求数据 服务器获取数据 查询数据库 将结果响应给页面
+var cityArr = [
+  {'cityId':1001,'cityName':'北京','areas':[
+  {'areaId':10011,'areaName':'东城'},
+  {'areaId':10012,'areaName':'西城'}
+]},
+  {'cityId':1002,'cityName':'上海','areas':[
+  {'areaId':10021,'areaName':'黄埔'},
+  {'areaId':10022,'areaName':'浦东'}
+  ]},
+]
+$.each(cityArr,function(i,o){
+      $('#city').append(`<option value="${o.cityId}">${o.cityName}</option>`);
+    })
+$('#city').change(function(){
+  $.each(cityArr,function(i,city){
+  // $('#city').append(`<option value="${o.cityId}">${o.cityName}</option>`);
+  if($('#city').val()==city.cityId){
+    $('#area').html('<option value="0">请选择</option>')
+    $.each(city.areas,function(i,area){
+      $('#area').append(`<option value="${area.areaId}">${area.areaName}</option>`);
+    })
+  }
+})
+})
+// 页面接收结果 将数据变成页面标签添加到页面上
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>伪类选择器</title>
+  <style>
+  a:link{
+      color: blueviolet
+  }
+  a:visited{
+    color: brown
+  }
+  a:hover{
+    color: chartreuse
+  }
+  a:active{
+    color: cyan
+  }
+  div{
+    width: 200px;
+    height: 200px;
+    background-color: chartreuse;
+     /* 过渡  当样式发生改变时不会马上完成变化而是在指定的时间内完成样式改变 */
+    transition: all 1s;
+  }
+
+  div:hover{
+    width: 400px;
+    background-color: deeppink;
+    /* 鼠标指针变成小手 */
+    cursor: pointer;
+    
+  }
+
+  </style>
+</head>
+<body>
+  <a href="">hello</a>
+  <div></div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+from django.http import HttpResponse
+from django.shortcuts import render
+from .tasks import task_test
+import datetime
+# Create your views here.
+def test_celery(request):
+    # 执行任务函数
+    #异步
+    task_test.delay()
+    now = datetime.datetime.now()
+    html = 'return at %s'%(now.strftime('%H:%M:%S'))
+    return HttpResponse(html)

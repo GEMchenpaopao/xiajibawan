@@ -1,0 +1,25 @@
+1.cookies和session
+  1.1Http协议的特性:无状态,但是在实现项目的业务功能时,很多场景是需要有状态的.
+	Cookies和session就是为了保持会话状态而诞生的两个存储技术
+2.Cookies的使用
+  cookies是保存在客户端浏览器上的存储空间
+  Cookies键和值都是以ASCII字符串的形存储(不能是中文字符串)
+  Cookies是按域隔离的,不同域之间无法访问
+  通过浏览器访问对应的服务器,会自带当前域的Cookies数据
+  2.1 设置HttpResponse.set_cookie(key, value='', max_age=None, expires=None)在Django 设置浏览器的COOKIE 必须通过 HttpResponse 对象来完成
+  2.2 删除HttpResponse.delete_cookie(key)
+  2.3 什么时候获取Cookies?
+	第一次访问时,服务器响应回时,设置Cookies
+	随后的访问,服务器可以接收和查看浏览器带来的Cookies
+value = request.COOKIES.get('Cookies名',属性值)
+
+
+3.session的使用
+  3.1 session的特点
+	数据会存储到服务器上
+	即使使用session存储数据,也离不开Cookies的支持.使用Cookies存储sessionid.
+  3.2 session的使用
+	设置/获取/删除 使用request对象操作如同操作字典一样
+	`request.session['KEY'] = VALUE`
+	`VALUE = request.session['KEY']`
+	`VALUE = request.session.get('KEY', 缺省值)`
